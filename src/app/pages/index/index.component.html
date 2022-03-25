@@ -2,4 +2,7 @@
     <div class="row">
         <app-card class="col-sm-3" *ngFor="let item of listCharacters" [character]="item"></app-card>
     </div>
+    <div class="row">
+        <app-paginate  [pagination]="pagination" (paginateRequest)="paginate($event)" ></app-paginate>
+    </div>
 </div>

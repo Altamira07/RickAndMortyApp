@@ -1,1 +1,10 @@
-<p>paginate works!</p>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item " [ngClass]="{'disabled' : pagination?.prev == undefined }">
+            <button class="page-link" (click)="onPreviousPage()" tabindex="-1">Previous</button>
+        </li>
+        <li class="page-item" [ngClass]="{'disabled' : pagination?.next == undefined }">
+            <button class="page-link" (click)="onNextPage()">Next</button>
+        </li>
+    </ul>
+</nav>

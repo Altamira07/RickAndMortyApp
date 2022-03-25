@@ -20,4 +20,11 @@ export class IndexComponent implements OnInit {
       this.pagination = data.info;
     });
   }
+
+  paginate(event: any) {
+    this.service.getCharactersByPage(event).subscribe(data => {
+      this.listCharacters = data.results;
+      this.pagination = data.info;
+    });
+  }
 }
