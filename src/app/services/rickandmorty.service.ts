@@ -8,7 +8,7 @@ import { ResponseData } from '../models/responseData';
   providedIn: 'root'
 })
 export class RickandmortyService {
-  url: string = "https://rickandmortyapi.com/api/character?page=10"
+  url: string = "https://rickandmortyapi.com/api/character"
   constructor(private http: HttpClient) { }
 
   getCharacters(): Observable<ResponseData> {

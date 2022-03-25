@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { IndexComponent } from './pages/index/index.component';
 import { CardComponent } from './components/card/card.component';
 import { PaginateComponent } from './components/paginate/paginate.component';
+import { ProgressComponent } from './components/progress/progress.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     CardComponent,
-    PaginateComponent
+    PaginateComponent,
+    ProgressComponent
   ],
   imports: [
     BrowserModule,
