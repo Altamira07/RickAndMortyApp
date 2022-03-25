@@ -1,0 +1,8 @@
+<div class="card card-component" *ngIf="character !== undefined">
+    <img src="{{character.image}}" alt="Nombre">
+    <div class="card-body">
+        <h5 class="card-title" *ngIf="character.name !== undefined "> {{character.name}} </h5>
+        <h6 class="card-subtitle mb-2 text-muted" *ngIf="character.species  !== undefined">{{character.species}}</h6>
+        <h6 class="card-subtitle mb-2 " *ngIf="character.status  !== undefined"> {{character.status}}</h6>
+    </div>
+</div>
