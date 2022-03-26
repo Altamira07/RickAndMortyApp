@@ -11,8 +11,8 @@ export class RickandmortyService {
   url: string = "https://rickandmortyapi.com/api/character"
   constructor(private http: HttpClient) { }
 
-  getCharacters(): Observable<ResponseData> {
-    return this.http.get(this.url).pipe(map((value: any) => value));
+  getCharacters(page : any): Observable<ResponseData> {
+    return this.http.get(this.url +"?page="+ page).pipe(map((value: any) => value));
   }
 
   getCharacter(id: number) {

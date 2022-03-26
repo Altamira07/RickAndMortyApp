@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { fadeIn, fadeOut } from 'src/app/animations/animation';
 import { Character } from 'src/app/models/character';
 import { Pagination } from 'src/app/models/pagination';
@@ -17,16 +19,30 @@ export class IndexComponent implements OnInit {
 
   listCharacters: Character[] = [];
   pagination?: Pagination;
-  constructor(private service: RickandmortyService) { }
+  constructor(private service: RickandmortyService, private router: Router, private activated: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.service.getCharacters().subscribe(data => {
+
+    this.activated.queryParamMap.subscribe(params => {
+      this.loadData(params.get('page'));
+    })
+
+  }
+
+  loadData(page: any = 1) {
+    this.service.getCharacters(page).subscribe(data => {
       this.listCharacters = data.results;
       this.pagination = data.info;
     });
   }
 
-  paginate(event: any) {
+
+  paginate(event: string) {
+    let urlParams = event.split('?')[1];
+    let params = new URLSearchParams(urlParams);
+    this.router.navigate([], {
+      queryParams: { page: params.get('page') }
+    })
     this.service.getCharactersByPage(event).subscribe(data => {
       this.listCharacters = data.results;
       this.pagination = data.info;
