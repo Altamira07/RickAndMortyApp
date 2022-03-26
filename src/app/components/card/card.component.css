@@ -3,3 +3,7 @@
     height: auto;
     margin-bottom: 1rem;
 }
+
+.card-footer{
+    text-align:end;
+}
