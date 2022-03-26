@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Character } from 'src/app/models/character';
@@ -11,7 +12,7 @@ import { RickandmortyService } from 'src/app/services/rickandmorty.service';
 export class DetailComponent implements OnInit {
 
   character?: Character;
-  constructor(private route: ActivatedRoute, private service: RickandmortyService) { }
+  constructor(private route: ActivatedRoute, private service: RickandmortyService, private location: Location) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -19,6 +20,9 @@ export class DetailComponent implements OnInit {
         this.character = data
       });
     });
+  }
 
+  onBack() {
+    this.location.back();
   }
 }

@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DetailComponent } from './pages/detail/detail.component';
 import { ImageroundComponent } from './components/imageround/imageround.component';
 import { DescriptionComponent } from './components/description/description.component';
+import { BackbuttonComponent } from './components/backbutton/backbutton.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { DescriptionComponent } from './components/description/description.compo
     ProgressComponent,
     DetailComponent,
     ImageroundComponent,
-    DescriptionComponent 
+    DescriptionComponent,
+    BackbuttonComponent 
   ],
   imports: [
     BrowserModule,
