@@ -1,10 +1,16 @@
 <div class="card card-component" *ngIf="character !== undefined">
     <img loading="lazy" src="{{character.image}}" @fadeIn alt="Nombre">
     <div class="card-body">
-        <h5 class="card-title" *ngIf="character.name !== undefined "> {{character.name |  uppercase}} </h5>
+        <h5 class="card-title" *ngIf="character.name !== undefined "> {{character.name | uppercase}} </h5>
         <h6 class="card-subtitle mb-2 text-muted" *ngIf="character.species  !== undefined">Especie:
             {{character.species}}</h6>
         <h6 class="card-subtitle mb-2  text-muted" *ngIf="character.status  !== undefined"> Estatus:
             {{character.status}}</h6>
+    </div>
+    <div class="card-footer">
+        <a [routerLink]="['/characters',character.id]">
+            <small>Ver mas...</small>
+        </a>
+
     </div>
 </div>
