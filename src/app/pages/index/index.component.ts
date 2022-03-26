@@ -33,6 +33,7 @@ export class IndexComponent implements OnInit {
     this.service.getCharacters(page).subscribe(data => {
       this.listCharacters = data.results;
       this.pagination = data.info;
+      this.toTopWindow();
     });
   }
 
@@ -46,6 +47,16 @@ export class IndexComponent implements OnInit {
     this.service.getCharactersByPage(event).subscribe(data => {
       this.listCharacters = data.results;
       this.pagination = data.info;
+      this.toTopWindow()
     });
+  }
+
+  toTopWindow() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+
   }
 }
